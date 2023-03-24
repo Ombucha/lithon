@@ -127,7 +127,7 @@ class GamesList:
         self._data = _data
 
     def __getitem__(self, index: int) -> LichessObject:
-        game = LichessObject(self._data[index])        
+        game = LichessObject(self._data[index])
         game.at = datetime.strptime(game.at, "%Y-%m-%dT%H:%M:%S.%fZ")
         return game
 

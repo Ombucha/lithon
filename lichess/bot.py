@@ -35,7 +35,7 @@ from .models import Game, LichessObject
 from .client import Client
 from .utils import _get, _post
 
-if TYPE_CHECKING:   
+if TYPE_CHECKING:
     from requests import Session
 
 
@@ -50,8 +50,8 @@ class Bot(Client):
         try:
             if getattr(self.get_profile(), "title", None) != "BOT":
                 warn("It is advisable to use the 'Client' class instead of this class for user accounts. Many critical methods of this class cannot be accessed through user accounts.", UserWarning, stacklevel = 2)
-        except LichessException:
-            raise LichessException("invalid authorization token.")
+        except LichessException as error:
+            raise LichessException("invalid authorization token.") from error
 
     def stream_board_state(self, game_id: str) -> Iterator[Union[Game, LichessObject]]:
         """

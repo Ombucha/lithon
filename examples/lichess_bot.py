@@ -1,5 +1,5 @@
-import lichess
 import stockfish
+import lichess
 
 bot = lichess.Bot("token")
 engine = stockfish.Stockfish("path/to/stockfish.exe")
@@ -10,7 +10,7 @@ def on_new_event(event):
     if event.type == "challenge" and event.challenge.challenger.id != bot.get_profile().id:
         bot.accept_challenge(event.challenge.id)
 
-    if event.type == "gameStart":                
+    if event.type == "gameStart":
 
         @bot.on_new_game_state(event.game.full_id)
         def on_new_game_state(state):

@@ -460,7 +460,7 @@ class Client:
             raise ValueError("'limit' must be greater than or equal to 1.")
         if color is not None and color.lower() not in ("white", "black"):
             raise ValueError("'color' should be either 'white' or 'black'.")
-        if performances is not None and not set([item.lower() for item in performances]).issubset({"ultrabullet", "bullet", "blitz", "rapid", "classical", "correspondence", "chess960", "crazyhouse", "antichess", "atomic", "horde", "kingofthehill", "racingkings", "threecheck"}):
+        if performances is not None and not {item.lower() for item in performances}.issubset({"ultrabullet", "bullet", "blitz", "rapid", "classical", "correspondence", "chess960", "crazyhouse", "antichess", "atomic", "horde", "kingofthehill", "racingkings", "threecheck"}):
             raise ValueError("an element of 'performances' is not a valid speed or variant.")
 
         sort = None
@@ -1532,7 +1532,7 @@ class Client:
         thread.start()
         return LichessObject(result)
 
-    def create_challenge(
+    def create_open_challenge(
             self,
             *,
             rated: Optional[bool] = None,
@@ -1608,7 +1608,7 @@ class Client:
         result = None
         def post_and_save():
             nonlocal result
-            result = _post(f"/api/challenge/open", self, params = {"rated": rated, "clock.limit": time, "clock.increment": increment, "days": days, "variant": variant, "fen": fen, "rules": rules, "users": ",".join(users)})
+            result = _post("/api/challenge/open", self, params = {"rated": rated, "clock.limit": time, "clock.increment": increment, "days": days, "variant": variant, "fen": fen, "rules": rules, "users": ",".join(users)})
 
         thread = Thread(target = post_and_save)
         thread.start()
@@ -1647,7 +1647,7 @@ class Client:
         """
         data = _post(f"/api/round/{game_id}/add-time/{time}", self)
         return data["ok"]
-    
+
     def create_challenge_tokens(self, users: List[str], description: str) -> bool:
         """
         Creates and obtains ``challenge:write`` tokens for multiple users.
@@ -1665,5 +1665,5 @@ class Client:
         :param description: The description of the tokens.
         :type description: :class:`str`
         """
-        data = _post(f"/api/token/admin-challenge", self, params = {"users": ",".join(users), "description": description})
+        data = _post("/api/token/admin-challenge", self, params = {"users": ",".join(users), "description": description})
         return LichessObject(data)
