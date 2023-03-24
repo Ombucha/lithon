@@ -15,7 +15,7 @@ lithon
 .. image:: https://img.shields.io/pypi/pyversions/lithon
     :alt: Python version info
 
-Lichess is a free, libre, adless, open-source chess server, and lithon ((li[chess in py]thon)[https://github.com/lichess-org/lila#:~:text=Lila%20(li%5Bchess%20in%20sca%5Dla)]) is a Python API wrapper for the Lichess API.
+Lichess is a free, libre, adless, open-source chess server, and lithon (`li[chess in py]thon <https://github.com/lichess-org/lila#:~:text=Lila%20(li%5Bchess%20in%20sca%5Dla)>`_) is a Python API wrapper for the Lichess API.
 
 
 Key Features
