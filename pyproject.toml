@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "lipy"
+version = "1.0.0"
+description = "A basic API wrapper for Lichess."
+authors = ["Infiniticity <omkaar.nerurkar@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/Infiniticity/lipy/"
+documentation = "https://lichess.readthedocs.io/"
+keywords = ["python", "lichess"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+packages = ["lichess"]
+
+[tool.poetry.dependencies]
+requests = "2.28.*"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Infiniticity/lipy/issues"
