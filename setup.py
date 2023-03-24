@@ -6,12 +6,12 @@ HERE = Path(__file__).resolve().parent
 README = (HERE / "README.rst").read_text()
 
 setup(
-    name = "lipy",
+    name = "lithon",
     version = "1.0.0",
     description = "A basic API wrapper for Lichess.",
     long_description = README,
     long_description_content_type = "text/x-rst",
-    url = "https://github.com/Infiniticity/lipy",
+    url = "https://github.com/Infiniticity/lithon",
     author = "Omkaar",
     author_email = "omkaar.nerurkar@gmail.com",
     license = "MIT",

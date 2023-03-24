@@ -1,4 +1,4 @@
-Welcome to lipy's documentation!
+Welcome to lithon's documentation!
 ================================
 
 .. toctree::

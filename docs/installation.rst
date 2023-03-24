@@ -14,10 +14,10 @@ To install the stable version, do the following:
 .. code-block:: sh
 
     # Unix / macOS
-    python3 -m pip install "lipy"
+    python3 -m pip install "lithon"
 
     # Windows
-    py -m pip install "lipy"
+    py -m pip install "lithon"
 
 
 Development Release
@@ -28,10 +28,10 @@ To install the development version, do the following:
 .. code-block:: sh
 
     # Git
-    $ git clone https://github.com/Infiniticity/lipy
+    $ git clone https://github.com/Infiniticity/lithon
 
     # tarball
-    $ curl  -OL https://github.com/Infiniticity/lipy/tarball/main
+    $ curl  -OL https://github.com/Infiniticity/lithon/tarball/main
 
 Once you have a copy of the sources, do the following:
 
